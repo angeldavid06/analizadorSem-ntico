@@ -1,0 +1,104 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 70%;
+    margin: auto;
+    position: relative;
+    background-color: #222f3e;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.codigo {
+    display: flex;
+    flex-wrap: wrap;
+    width: 46%;
+}
+
+.codigo h1 {
+    width: 100%;
+    padding: 30px 0px;
+    color: #c8d6e5;
+}
+
+.codigo textarea {
+    width: 100%;
+    height: 500px;
+    border-radius: 5px;
+    border: 2px solid #353b48;
+    resize: none;
+    padding: 15px;
+    background-color: #2f3640;
+    color: #f5f6fa;
+}   
+
+.codigo textarea:focus {
+    outline: none;
+    border-color: #40739e;
+}
+
+.opciones {
+    width: 100%;
+    padding: 15px 0px;
+}
+
+.opciones button {
+    padding: 10px 20px;
+    margin: 0px 15px 0px 0px;
+    border-radius: 5px;
+    border: 2px solid #ff6b6b;
+    cursor: pointer;
+    background-color: #ff6b6b;
+    color: #c8d6e5;
+}
+
+.opciones button:hover {
+    background-color: #ee5253;
+    border-color: #ee5253;
+}
+
+.opciones button:focus {
+    outline: none;
+    border-color: #f5f6fa;
+}
+
+.tablaSimbolos {
+    position: absolute;
+    margin: auto;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    max-height: 500px;
+    overflow: auto;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #192a56;
+    z-index: 99999;
+    color: white;
+    visibility: hidden;
+}
+
+.mostrar {
+    visibility: visible;
+}
+
+.tablaSimbolos table {
+    width: 100%;
+    max-height: 300px;
+    overflow-y: hidden;
+    margin: 15px 0px;
+    border-radius: 5px;
+}
+
+.tablaSimbolos table td {
+    border: 1px solid white;
+    padding: 10px;
+}

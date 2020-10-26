@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analizador Semántico</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <main>
+        <div class="codigo">
+            <h1>Código</h1>
+            <textarea id="text" name="" id="" cols="" rows="" ></textarea>
+        </div>
+        <div class="codigo">
+            <h1>Analizador</h1>
+            <textarea id="analizador" name="" id="" cols="" rows="" readonly></textarea>
+        </div>
+    </main>
+    <div class="opciones">
+        <button onclick="Analizar()">Analizar</button>
+        <button class="tabla">Mostrar tabla de simbolos</button>
+    </div>
+    <div class="tablaSimbolos">
+        <h1>Tabla de símbolos</h1>
+        <table>
+            <tbody>
+                <tr>
+                    <td>INICIO</td>
+                    <td>Inicio del programa.</td>
+                </tr>
+                <tr>
+                    <td>FIN</td>
+                    <td>Fin del programa.</td>
+                </tr>
+                <tr>
+                    <td>INT</td>
+                    <td>Declaración de variable (int).</td>
+                </tr>
+                <tr>
+                    <td>STRING</td>
+                    <td>Declaración de variable (String).</td>
+                </tr>
+                <tr>
+                    <td>CHAR</td>
+                    <td>Declaración de variable (Char).</td>
+                </tr>
+                <tr>
+                    <td>BOOLEAN</td>
+                    <td>Declaración de variable (Boolean).</td>
+                </tr>
+                <tr>
+                    <td>FLOAT</td>
+                    <td>Declaración de variable (Float).</td>
+                </tr>
+                <tr>
+                    <td>DOUBLE</td>
+                    <td>Declaración de variable (Double).</td>
+                </tr>
+                <tr>
+                    <td>IMPRIMIR ()</td>
+                    <td>Impresión en consola.</td>
+                </tr>
+                <tr>
+                    <td>SUM ()</td>
+                    <td>Operación de suma.</td>
+                </tr>
+                <tr>
+                    <td>RES ()</td>
+                    <td>Operación de resta.</td>
+                </tr>
+                <tr>
+                    <td>DIV ()</td>
+                    <td>Operación de división.</td>
+                </tr>
+                <tr>
+                    <td>MUL ()</td>
+                    <td>Operación de multiplicación.</td>
+                </tr>
+                <tr>
+                    <td>=</td>
+                    <td>Asignación de valores.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="js/tabla.js?1.1"></script>
+    <script src="js/errores.js?1.1"></script>
+    <script src="js/main.js?1.1"></script>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/simbolos.js"></script>
+</body>
+</html>

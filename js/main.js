@@ -66,16 +66,15 @@ function tipoBool (array, tabla) {
 
 function asignacion (dato, tabla) {
     let datos = dato.split(" = ");
-    let existe, tipo, fP = "", mensaje;
+    let existe = false, tipo, fP = "", mensaje;
     let variable = datos[0].trim();
     
     for (let i = 0; i < variables.length; i++) {
         if (variable == variables[i][0]) {
             tipo = variables[i][1];
+            console.log(variables[i][0]);
             existe = true;
-        } else {
-            existe = false;
-        }
+        }  
     }
 
     if (existe) {
@@ -115,13 +114,44 @@ function asignacion (dato, tabla) {
 function tipoFuncion (array, tabla) {
     fP = array[1].replace(/[.*+\-?^${}()|[\]\\]/g, " ");
     c = fP.split(",");
+    let existe1 = false, existe2 = false, tipo;
     
     if (c[0].trim() == "" || c[1].trim() == "") {
         aux = analizador.value;
         analizador.value = aux + "Error: " + errores[4][1] + "\n";
     } else {
-        aux = analizador.value;
-        analizador.value = aux + "" + tabla + "\n";
+        if (isNaN(c[0]) == true && isNaN(c[1]) == true) {
+            
+            for (let j = 0; j < variables.length; j++) {
+                console.log(variables[j][0] + " : " + c[0]);
+                if (c[0].trim() == variables[j][0]) {
+                    tipo = variables[j][1];
+                    existe1 = true;
+                    j = variables.length;
+                }  
+            }
+            
+            for (let i = 0; i < variables.length; i++) {
+                console.log(variables[i][0] + " : " + c[1]);
+                if (c[1].trim() == variables[i][0]) {
+                    tipo = variables[i][1];
+                    existe2 = true;
+                    i = variables.length;
+                }  
+            }
+    
+            if (existe1 == true && existe2 == true) {
+                aux = analizador.value;
+                analizador.value = aux + "" + tabla + "\n";
+            } else {
+                aux = analizador.value;
+                analizador.value = aux + "Error: " + errores[8][1] + "\n";
+                console.log(c[1] + " : " + c[0]);
+            }
+        } else {
+            aux = analizador.value;
+            analizador.value = aux + "" + tabla + "\n";
+        }
     }
 }
 
